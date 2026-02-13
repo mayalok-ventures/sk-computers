@@ -1,1 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Digital Transformation Proposal · SK Institute</title>
+    <!-- Google Font & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f1a;
+            color: #ffffff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+
+        .section-subhead {
+            color: #a0aec0;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: #fff;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 8px 20px rgba(59,130,246,0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #3b82f6;
+            color: #fff;
+            box-shadow: none;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(59,130,246,0.4);
+        }
+
+        .btn-outline:hover {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            flex-wrap: wrap;
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            flex: 1 1 45%;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: #3b82f6;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-title span {
+            color: #3b82f6;
+            border-bottom: 4px solid #3b82f6;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .hero-desc {
+            color: #cbd5e0;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            flex: 1 1 45%;
+            background: linear-gradient(145deg, #1e2433, #0f131e);
+            border-radius: 30px;
+            padding: 1rem;
+            box-shadow: 0 25px 40px -15px rgba(0,0,0,0.5);
+            border: 1px solid #2d3748;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ----- TRUST COUNTER ----- */
+        .trust-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: #151b26;
+            border-radius: 50px;
+            padding: 2.5rem 2rem;
+            margin-top: 2rem;
+            border: 1px solid #2d3748;
+        }
+
+        .trust-item {
+            text-align: center;
+            flex: 1 1 200px;
+            margin: 0.5rem 0;
+        }
+
+        .trust-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #3b82f6;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .trust-label {
+            font-size: 1rem;
+            color: #b0c4ce;
+            letter-spacing: 0.5px;
+        }
+
+        /* ----- WHY WEB DEV LOGIC ----- */
+        .why-card {
+            background: #0f131e;
+            border-left: 6px solid #3b82f6;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px -10px #000;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .why-text {
+            flex: 2;
+        }
+
+        .why-text h3 {
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-text p {
+            color: #cbd5e0;
+            font-size: 1.2rem;
+        }
+
+        .why-icon {
+            flex: 0 0 80px;
+            font-size: 4rem;
+            color: #3b82f6;
+            text-align: center;
+        }
+
+        /* ----- COURSE GRID ----- */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .course-card {
+            background: #151e2c;
+            padding: 2rem 1.5rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: 0.25s;
+            border: 1px solid #2a3748;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: #3b82f6;
+            box-shadow: 0 15px 30px -10px #3b82f6;
+        }
+
+        .course-card i {
+            font-size: 2.8rem;
+            color: #3b82f6;
+            margin-bottom: 1.2rem;
+        }
+
+        .course-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .course-card p {
+            color: #a0aec0;
+            font-size: 0.95rem;
+        }
+
+        /* ----- WALL OF FAME (Slider) ----- */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            margin: 2rem 0;
+            overflow: hidden;
+            border-radius: 28px;
+            border: 1px solid #2d3748;
+            background: #0f131e;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.7);
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1e293bcc;
+            color: white;
+            border: none;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+            transition: 0.2s;
+            border: 1px solid #ffffff55;
+        }
+
+        .slider-btn:hover {
+            background: #3b82f6;
+            border-color: #fff;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        /* ----- LEAD FORM (WHATSAPP) ----- */
+        .lead-area {
+            background: linear-gradient(145deg, #0f1a24, #0b111c);
+            border-radius: 48px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            border: 1px solid #3b82f633;
+            box-shadow: 0 20px 40px -15px #00000080;
+        }
+
+        .lead-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .lead-buttons {
+            display: flex;
+            gap: 1.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2.2rem;
+        }
+
+        .btn-wa {
+            background: #25D366;
+            box-shadow: 0 8px 18px #25D36633;
+        }
+
+        .btn-wa i {
+            margin-right: 8px;
+        }
+
+        .btn-wa:hover {
+            background: #20bd5a;
+        }
+
+        /* ----- PRICING CARDS (3 plans) ----- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: #0f151f;
+            border-radius: 32px;
+            padding: 2.8rem 2rem;
+            border: 1px solid #28303f;
+            transition: 0.25s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            border-color: #3b82f6;
+            transform: scale(1.02);
+            background: #121a26;
+        }
+
+        .popular-tag {
+            position: absolute;
+            top: -14px;
+            left: 30px;
+            background: #3b82f6;
+            color: white;
+            padding: 0.4rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .plan-name {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .plan-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #3b82f6;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px solid #2d3748;
+            padding-bottom: 1.2rem;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #a0aec0;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2.2rem;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #d1d9e8;
+        }
+
+        .plan-features i {
+            color: #3b82f6;
+            width: 22px;
+            text-align: center;
+        }
+
+        /* ----- VALUE POINTS (Closing content) ----- */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-item {
+            background: #0f1620;
+            padding: 2rem;
+            border-radius: 24px;
+            border-bottom: 4px solid #3b82f6;
+        }
+
+        .value-item i {
+            font-size: 2.2rem;
+            color: #3b82f6;
+            margin-bottom: 1.2rem;
+        }
+
+        .value-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .value-item p {
+            color: #b0c4ce;
+            font-size: 1rem;
+        }
+
+        /* ----- FOOTER CREDIT ----- */
+        .footer-credit {
+            margin-top: 5rem;
+            padding: 2rem 0;
+            border-top: 1px solid #253040;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .footer-credit i {
+            color: #3b82f6;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            .trust-number {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem 1.2rem;
+            }
+            h2 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <!-- 🏛️ HERO SECTION: Sunil Sir / Lab photo + tagline -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-tagline">SK INSTITUTE · AICHHER</div>
+                <h1 class="hero-title"><span>Legacy of 10 Years</span><br>Now with a Digital Edge.</h1>
+                <p class="hero-desc">10 years of excellence, 5000+ trained professionals — your brand deserves a digital presence as powerful as your teaching.</p>
+                <a href="#pricing" class="btn">📋 Explore 3 Strategic Plans →</a>&nbsp;&nbsp;
+                <a href="#lead" class="btn btn-outline">📲 Connect on WhatsApp</a>
+            </div>
+            <div class="hero-image">
+                <!-- large photo: Sunil Sir / lab (premium placeholder) -->
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Sunil Sir - SK Institute lab" loading="lazy">
+            </div>
+        </section>
+
+        <!-- 🔢 The "Trust" Counter: live numbers -->
+        <section>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-number">10+</div>
+                    <div class="trust-label">Years of Legacy</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">5000+</div>
+                    <div class="trust-label">Students Trained</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">160+</div>
+                    <div class="trust-label">Google Reviews ⭐</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">25+</div>
+                    <div class="trust-label">Courses</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 💡 Why SK Needs a Site? (Web Dev Logic) -->
+        <section>
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="why-text">
+                    <h3>Being a Web Development Expert, your website is your <span style="color:#3b82f6;">Live Portfolio.</span></h3>
+                    <p>Your students learn web dev — let them analyze, learn, and get inspired by YOUR institute’s website. It’s the strongest proof of your expertise.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📚 Course Grid: ADCA, Tally Prime, Java, Python, Web Dev -->
+        <section>
+            <h2>Flagship courses</h2>
+            <div class="section-subhead">Industry-relevant programs that build careers</div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>ADCA</h4>
+                    <p>Advanced Diploma in Computer Applications. Complete IT foundation.</p>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Tally Prime</h4>
+                    <p>Accounting & GST mastery – most demanded skill.</p>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-coffee"></i>
+                    <h4>Java</h4>
+                    <p>Core & Advanced Java. OOPs, DSA, real-world projects.</p>
+                </div>
+                <div class="course-card">
+                    <i class="fab fa-python"></i>
+                    <h4>Python</h4>
+                    <p>Scripting, Django, data analysis – future ready.</p>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-globe"></i>
+                    <h4>Web Dev</h4>
+                    <p>HTML, CSS, JS, React, PHP – full stack exposure.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🖼️ Wall of Fame: Premium dynamic slider (Google photos vibe) -->
+        <section>
+            <h2>Wall of Fame</h2>
+            <div class="section-subhead">Moments that define SK Institute – Google photos slider</div>
+            <div class="slider-container" id="wallSlider">
+                <div class="slider" id="slider">
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80" alt="Students at SK Institute">
+                        <div class="slide-caption">🏆 Google review star: "Best faculty in Aichher"</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Lab session">
+                        <div class="slide-caption">💻 Advanced web development workshop – 2024</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" alt="Students with certificates">
+                        <div class="slide-caption">🎓 200+ students placed in last 6 months</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Sunil Sir felicitation">
+                        <div class="slide-caption">🏅 10 years celebration – Sunil Sir with team</div>
+                    </div>
+                </div>
+                <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- 📩 Lead Form: Download Syllabus / Book Free Demo — Direct WhatsApp -->
+        <section id="lead">
+            <div class="lead-area">
+                <h3 class="lead-title">🚀 Get syllabus & book your demo</h3>
+                <p style="color:#cbd5e0; font-size:1.2rem; max-width:600px; margin:0 auto;">Click below & connect directly on WhatsApp. No forms, no delays.</p>
+                <div class="lead-buttons">
+                    <a href="https://wa.me/919876543210?text=Hi%20SK%20Institute!%20I%20want%20to%20download%20the%20syllabus%20for%20your%20courses." target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Download Syllabus (PDF)</a>
+                    <a href="https://wa.me/919876543210?text=Hi%20SK%20Institute!%20I%27d%20like%20to%20book%20a%20FREE%20demo%20class." target="_blank" class="btn btn-outline" style="border-color:#25D366; color:#fff;"><i class="fab fa-whatsapp" style="color:#25D366;"></i> Book Free Demo</a>
+                </div>
+                <p style="margin-top:2rem; font-size:0.9rem; color:#8e9fb1;">📌 Instant inquiry on WhatsApp – leads directly reach your phone</p>
+            </div>
+        </section>
+
+        <!-- 💰💰💰 3 PROFESSIONAL PLANS (Pricing as per table) -->
+        <section id="pricing">
+            <h2>Digital Growth Plans</h2>
+            <div class="section-subhead">Choose your digital transformation blueprint</div>
+            <div class="pricing-grid">
+                <!-- Basic Starter -->
+                <div class="pricing-card">
+                    <div class="plan-name">Basic</div>
+                    <div class="plan-price">₹8,000 <span>– 10k</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> 4-5 pages (Long Scroll)</li>
+                        <li><i class="fas fa-check-circle"></i> Instant Online Presence</li>
+                        <li><i class="fas fa-check-circle"></i> WhatsApp Integration</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Friendly / Responsive</li>
+                        <li><i class="fas fa-check-circle"></i> All courses in one section</li>
+                        <li><i class="fas fa-check-circle"></i> 3 Months Support</li>
+                        <li><i class="fas fa-check-circle"></i> ₹0 hidden cost</li>
+                    </ul>
+                    <a href="#lead" class="btn" style="width:100%; text-align:center;">Get Basic →</a>
+                </div>
+                <!-- Standard Growth (popular) -->
+                <div class="pricing-card">
+                    <div class="popular-tag">🔥 MOST RECOMMENDED</div>
+                    <div class="plan-name">Standard</div>
+                    <div class="plan-price">₹15,000 <span>– 18k</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> 5-7 Pages Full Website</li>
+                        <li><i class="fas fa-check-circle"></i> Brand Building & SEO ready</li>
+                        <li><i class="fas fa-check-circle"></i> Dedicated pages for each course</li>
+                        <li><i class="fas fa-check-circle"></i> Wall of Fame + Testimonials</li>
+                        <li><i class="fas fa-check-circle"></i> Google Map Integration</li>
+                        <li><i class="fas fa-check-circle"></i> 6 Months Support</li>
+                        <li><i class="fas fa-check-circle"></i> Premium UI/UX</li>
+                    </ul>
+                    <a href="#lead" class="btn" style="width:100%; text-align:center;">Choose Standard →</a>
+                </div>
+                <!-- Premium Authority -->
+                <div class="pricing-card">
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-price">₹25,000 <span>+</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Pages / Advanced Portal</li>
+                        <li><i class="fas fa-check-circle"></i> Student Dashboard / LMS</li>
+                        <li><i class="fas fa-check-circle"></i> Syllabus Download + PDF automation</li>
+                        <li><i class="fas fa-check-circle"></i> Live Chat Support Integration</li>
+                        <li><i class="fas fa-check-circle"></i> Complete SEO Setup (Local)</li>
+                        <li><i class="fas fa-check-circle"></i> 1 Year Priority Support</li>
+                        <li><i class="fas fa-check-circle"></i> Full Business Automation</li>
+                    </ul>
+                    <a href="#lead" class="btn" style="width:100%; text-align:center;">Go Premium →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ✨ CLOSING CONTENT – Value Points (Pitch) -->
+        <section>
+            <h2>The SK Institute Advantage</h2>
+            <div class="section-subhead">Why your institute needs this digital leap — insights by DeepLink Creators</div>
+            <div class="value-grid">
+                <div class="value-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Digital Identity vs Justdial</h4>
+                    <p>Sir, Justdial makes you fight with 10 others for a lead. Your own website = no competition, only conversion. Student only sees YOU.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-code-branch"></i>
+                    <h4>The Web-Dev Proof</h4>
+                    <p>Your students learn web development. They can inspect, fork, and learn from your institute’s live source code. That’s authority.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-robot"></i>
+                    <h4>Student Lead Automation</h4>
+                    <p>No more picking calls. Students fill inquiry → you get name + course instantly on WhatsApp. Faster replies, more admissions.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Local SEO · Google Ranking</h4>
+                    <p>We’ll optimize for "Best Computer Institute in Aichher". New students will find you first, before any competitor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🧾 FOOTER with PRO TIP credit -->
+        <div class="footer-credit">
+            <i class="fas fa-crown" style="color:#fbbf24;"></i> Developed by <span style="color:#fff; font-weight:600;">DeepLink Creators</span> for the <span style="color:#3b82f6;">Best Teacher in Aichher</span> — Sunil Sir, SK Institute.
+            <div style="margin-top:0.8rem; font-size:0.9rem; color:#7f8ea3;">🚀 Digital transformation · 10 years legacy meets modern web</div>
+        </div>
+    </main>
+
+    <!-- SIMPLE SLIDER JAVASCRIPT (Wall of Fame) -->
+    <script>
+        (function() {
+            const slider = document.getElementById('slider');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+
+            function updateSlider() {
+                if (slider) {
+                    slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+                }
+            }
+
+            if (prevBtn && nextBtn && slider) {
+                prevBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+                    updateSlider();
+                });
+
+                nextBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    slideIndex = (slideIndex + 1) % totalSlides;
+                    updateSlider();
+                });
+
+                // auto slide every 5 seconds (optional, but smooth)
+                setInterval(() => {
+                    slideIndex = (slideIndex + 1) % totalSlides;
+                    updateSlider();
+                }, 5000);
+            }
+        })();
+    </script>
+
+    <!-- Smooth anchor scroll (lightweight) -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
